@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact-US{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/custom/contact.css">
+  <script type="text/javascript" src="/static/js/custom/contact_us.js"></script>
+{% endblock %}
+
+{% block data %}
+    <h1>User Details</h1>
+    <h5>Please fill the below fields, we will get in touch with you.</h5>
+    <cite>( All field's marked with (<b style="vertical-align:middle;"> * </b>) are compulsory )</cite>
+    <form name="user-detail">
+      <div class="field-alert">
+        <input type="text" id="name-form" class="input" name="name" placeholder="Enter your Name" required onchange="name_check(this)">
+        <label for="name">*</label>
+        <p id="name_field"></p>
+      </div>
+      <div class="field-alert">
+        <input type="email" id="email-form" class="input" name="email" placeholder="Enter your Email" required onchange="email_check(this)">
+        <label for="email">*</label>
+        <p id="email_field"></p>
+      </div>
+      <div class="field-alert">
+        <input type="text" id="phone-form" class="input" maxlength="10" name="phone" placeholder="Enter your Mobile No." required onchange="phone_check(this)">
+        <label for="phone">*</label>
+        <p id="phone_field"></p>
+      </div>
+      <input type="hidden" name="api_url" value="http://localhost:8000/register/new_user">
+      <!-- <input type="submit" class="input btn btn-success" name="submit" value="Submit"> -->
+      <button type="button" id="submit-btn" class="input btn btn-success" onclick="get_details()">Submit</button>
+    </form>
+
+    <div id="alert-msg-div" role="alert">
+      <h4 id="msg"></h4>
+    </div>
+{% endblock %}

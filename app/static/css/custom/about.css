@@ -1,0 +1,11 @@
+.cover{
+  background: darkgoldenrod;
+  padding: 3%;
+}
+#about-tab{
+  color: #fff;
+  border-bottom-color: #fff;
+}
+.lead{
+  text-align: justify;
+}
